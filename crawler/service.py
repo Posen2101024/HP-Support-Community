@@ -3,11 +3,11 @@ from os import makedirs
 
 import threading
 
-def serviceInit(model):
+def serviceInit(dataset):
 
 	Status().init()
-	Update().init(model)
-	UnfinishedUrls().init(model)
+	Update().init(dataset)
+	UnfinishedUrls().init(dataset)
 
 class _Singleton():
 
@@ -50,9 +50,9 @@ class Status(_Singleton):
 
 class Update(_Singleton):
 
-	def init(self, model, dir_ = ".service", name = "update"):
+	def init(self, dataset, dir_ = ".service", name = "update"):
 
-		path = "{}/{}".format(model, dir_)
+		path = "{}/{}".format(dataset, dir_)
 
 		makedirs(path, exist_ok = True)
 
@@ -83,10 +83,10 @@ class Update(_Singleton):
 
 class UnfinishedUrls(_Singleton):
 
-	def init(self, model, dir_ = ".service", name = "unfinished_urls", 
+	def init(self, dataset, dir_ = ".service", name = "unfinished_urls", 
 		add_urls = "add_urls", del_urls = "del_urls"):
 
-		path = "{}/{}".format(model, dir_)
+		path = "{}/{}".format(dataset, dir_)
 
 		makedirs(path, exist_ok = True)
 

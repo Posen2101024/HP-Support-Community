@@ -1,17 +1,17 @@
 
 if [ "$#" == "0" ]; then
-	models=('Notebooks' 'Printers' 'Desktops' 'Tablets' 'Gaming' 'Software')
+	database=('Notebooks' 'Printers' 'Desktops' 'Tablets' 'Gaming' 'Software')
 else
-	models="$@"
+	database="$@"
 fi
 
 cd $(dirname "$0")
 
-for model in ${models[*]}; do
+for dataset in ${database[*]}; do
 
-	printf "\n${model}\n"
+	printf "\n${dataset}\n"
 
-	python3 main.py ${model} --url
+	python3 main.py ${dataset} --url
 
 done
 
@@ -19,11 +19,11 @@ for times in $(seq 1 3); do
 
 	printf "\n%s\n" "------------------------------"
 
-	for model in ${models[*]}; do
+	for dataset in ${database[*]}; do
 
-		printf "\n${model}\n"
+		printf "\n${dataset}\n"
 
-		python3 main.py ${model} --html
+		python3 main.py ${dataset} --html
 
 	done
 

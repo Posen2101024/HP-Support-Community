@@ -7,7 +7,7 @@ download() {
 
 	gdown "https://drive.google.com/uc?export=download&id=${1}" -O model.zip
 
-	unzip -o model.zip && rm model.zip
+	unzip -o database.zip && rm database.zip
 }
 
-download "1GajAVRwrxl-l_oPDVibKvnDis7dsSUav"
+download ""

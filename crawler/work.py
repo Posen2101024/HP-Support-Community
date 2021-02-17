@@ -27,7 +27,7 @@ def topicUrlCrawler(path_url, item, length, id_ = 0):
 
 			pages = parser.getPages()
 
-			if pages > 1: 
+			if pages > 1:
 
 				parser = ParseTopic(urlRequests("{}/page/{}".format(first_url, pages)))
 

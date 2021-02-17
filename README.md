@@ -8,7 +8,7 @@ HP support community discussions on https://h30434.www3.hp.com .
 
 	***run*** `mv chromedriver HP-Support-Community-Crawler/chromedriver`
 
-- Download Model
+- Download Database
 
     ***run*** `sh download.sh`
 
@@ -39,7 +39,7 @@ HP/
 │   ├── util.py
 │   └── work.py
 │
-├── model/                   # Dataset
+├── database/                # Database
 │   ├── Desktops/
 │   ├── Gaming/
 │   ├── Notebooks/           # Notebooks Dataset

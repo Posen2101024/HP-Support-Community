@@ -10,14 +10,12 @@ import argparse
 
 def main(args):
 
-	model = "model/{}".format(args.model)
+	path_forum   = "database/{}/forum.csv".format(args.dataset)
+	path_url     = "database/{}/url".format(args.dataset)
+	path_html    = "database/{}/html".format(args.dataset)
+	path_content = "database/{}/content".format(args.dataset)
 
-	path_forum   = "{}/forum.csv".format(model)
-	path_url     = "{}/url".format(model)
-	path_html    = "{}/html".format(model)
-	path_content = "{}/content".format(model)
-
-	serviceInit(model)
+	serviceInit("database/{}".format(args.dataset))
 
 	if args.url:
 
@@ -35,7 +33,7 @@ if __name__ == "__main__":
 
 	parser = argparse.ArgumentParser()
 
-	parser.add_argument("model", type = str)
+	parser.add_argument("dataset", type = str)
 
 	parser.add_argument("--url", 
 		default = False, action = "store_true")

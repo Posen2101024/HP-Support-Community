@@ -9,9 +9,9 @@ __pycache__/
 # Mac/OSX
 .DS_Store
 
-# Model
+# Database
 *.zip*
-model/*/*/
+database/*/*/
 chromedriver
 
 # Log
