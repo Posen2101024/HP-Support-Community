@@ -4,3 +4,4 @@ selenium==3.141.0
 beautifulsoup4==4.9.3
 lxml==4.6.2
 pandas==1.2.2
+openpyxl==3.0.6
