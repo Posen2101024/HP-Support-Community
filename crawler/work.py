@@ -8,7 +8,9 @@ from .util import getTopicUrl
 from .util import urlRequests
 from .util import timeToYMDHM
 
+from os import listdir
 from os import makedirs
+from os import rename
 from time import sleep
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
@@ -160,8 +162,7 @@ def topicHtmlCrawler(path_html, path_content, items, id_ = 0):
 
 			print(url)
 
-		Status().write("[{:>{}d} / {}] {}"
-			.format(i, len(str(len(items))), len(items), topic), id_)
+		Status().write("[{:>{}d} / {}] {}".format(i, len(str(len(items))), len(items), topic), id_)
 
 def topicHtmlToContent(path_html, path_content, forum, topic):
 
@@ -211,3 +212,11 @@ def topicUpdate(path_url):
 	urls = [url for forum, url in data]
 
 	UnfinishedUrls().addUrls(urls)
+
+def topicClean():
+
+	urls = UnfinishedUrls().getUrls()
+
+	print("\n".join(urls))
+
+	UnfinishedUrls().delUrls(urls)

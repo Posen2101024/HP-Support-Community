@@ -3,6 +3,7 @@ from crawler import topicUrlCrawlerThread
 from crawler import topicHtmlCrawlerThread
 from crawler import topicHtmlToContentProcess
 from crawler import topicUpdate
+from crawler import topicClean
 from crawler import serviceInit
 
 from os import listdir
@@ -34,6 +35,10 @@ def main(args):
 
 		topicUpdate(path_url)
 
+	if args.clean:
+
+		topicClean()
+
 if __name__ == "__main__":
 
 	parser = argparse.ArgumentParser()
@@ -47,6 +52,8 @@ if __name__ == "__main__":
 	parser.add_argument("--content", 
 		default = False, action = "store_true")
 	parser.add_argument("--update", 
+		default = False, action = "store_true")
+	parser.add_argument("--clean", 
 		default = False, action = "store_true")
 
 	args = parser.parse_args()
