@@ -10,4 +10,4 @@ download() {
 	unzip -o database.zip && rm database.zip
 }
 
-download ""
+download "1Zw4jQsdGDk3Eirx3cThDPgB3hLZSydgy"
